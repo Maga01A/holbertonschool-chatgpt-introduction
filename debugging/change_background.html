@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change Background Color</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding-top: 50px;
+        transition: background-color 0.4s ease;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<h2>Click the button to change the background color</h2>
+
+<button id="colorButton" type="button">Change Color</button>
+
+<script>
+    // Select the button by its correct id and add the click listener.
+    // Script is at the end of the body so element exists already.
+    document.getElementById("colorButton").addEventListener("click", changeBackgroundColor);
+
+    function changeBackgroundColor() {
+        // Generate a properly padded random hex color (always 6 digits).
+        var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+        // Change the background color of the body
+        document.body.style.backgroundColor = randomColor;
+    }
+</script>
+
+</body>
+</html>
